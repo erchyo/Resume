@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Young | Senior macOS Systems Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background: #f5f5f7;
+    padding: 2rem 1rem;
+  }
+
+  .page {
+    background: #ffffff;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .header {
+    border-bottom: 0.5px solid #d2d2d7;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .name {
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    color: #1d1d1f;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0071e3;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  .location {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #6e6e73;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6e6e73;
+    padding-bottom: 6px;
+    border-bottom: 0.5px solid #d2d2d7;
+    margin-bottom: 1rem;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #6e6e73;
+    background: #f5f5f7;
+    border: 0.5px solid #d2d2d7;
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
+
+  .skill-primary {
+    color: #0071e3;
+    border-color: #0071e3;
+    background: #f0f6ff;
+  }
+
+  .job {
+    margin-bottom: 1.5rem;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .job-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1f;
+  }
+
+  .job-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #6e6e73;
+    white-space: nowrap;
+  }
+
+  .job-co {
+    font-size: 12px;
+    color: #6e6e73;
+    margin-bottom: 8px;
+  }
+
+  .bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bullets li {
+    font-size: 13px;
+    color: #3a3a3c;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .bullets li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: #aeaeb2;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #0071e3;
+    background: #f0f6ff;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  .divider {
+    height: 0.5px;
+    background: #e8e8ed;
+    margin: 1.25rem 0;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+
+  .cert {
+    font-size: 12px;
+    color: #3a3a3c;
+    padding: 8px 12px;
+    background: #f5f5f7;
+    border-radius: 6px;
+    border: 0.5px solid #d2d2d7;
+  }
+
+  .cert-name {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .cert-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #6e6e73;
+  }
+
+  .edu-degree {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1d1d1f;
+  }
+
+  .edu-school {
+    font-size: 12px;
+    color: #6e6e73;
+    margin-top: 2px;
+  }
+
+  .saas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .saas-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #6e6e73;
+    background: #f5f5f7;
+    border: 0.5px solid #d2d2d7;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* Contact Form */
+  .contact-form {
+    padding-top: 1.75rem;
+    border-top: 0.5px solid #d2d2d7;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .form-field.full {
+    grid-column: 1 / -1;
+  }
+
+  .form-field label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e6e73;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #1d1d1f;
+    background: #f5f5f7;
+    border: 0.5px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.15s;
+    resize: vertical;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: #0071e3;
+    background: #fff;
+  }
+
+  .form-field textarea {
+    min-height: 100px;
+  }
+
+  .form-submit {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background: #0071e3;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 22px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .form-submit:hover {
+    background: #0077ed;
+  }
+
+  .form-note {
+    font-size: 11px;
+    color: #aeaeb2;
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .success-msg {
+    display: none;
+    font-size: 13px;
+    color: #34c759;
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; padding: 2rem 2.5rem; }
+    .contact-form { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 1.5rem; }
+    .name { font-size: 28px; }
+    .job-header { flex-direction: column; gap: 2px; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="name">Eric Young</div>
+    <div class="role">Senior macOS Systems Engineer</div>
+    <div class="location">Boston, MA</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Platforms &amp; Tools</div>
+    <div class="skills-grid">
+      <span class="skill skill-primary">macOS</span>
+      <span class="skill skill-primary">iOS</span>
+      <span class="skill skill-primary">iPadOS</span>
+      <span class="skill">Jamf Pro</span>
+      <span class="skill">Jamf Connect</span>
+      <span class="skill">Okta / OIDC</span>
+      <span class="skill">Apple Business Manager</span>
+      <span class="skill">Apple School Manager</span>
+      <span class="skill">DDM / Blueprints</span>
+      <span class="skill">Platform SSO</span>
+      <span class="skill">SwiftDialog</span>
+      <span class="skill">Setup Your Mac</span>
+      <span class="skill">DEPNotify</span>
+      <span class="skill">Windows 10/11</span>
+      <span class="skill">Office 365</span>
+      <span class="skill">Google Workspace</span>
+      <span class="skill">Confluence / Jira</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Senior macOS Systems Engineer</div>
+        <div class="job-date">2022 – present</div>
+      </div>
+      <div class="job-co">SimpliSafe &nbsp;·&nbsp; Boston, MA</div>
+      <ul class="bullets">
+        <li>Architected zero-touch provisioning pipeline via <span class="mono">Setup Your Mac</span>, migrating from DEPNotify; currently prototyping agentless enrollment with <span class="mono">Platform SSO</span></li>
+        <li>Designed and maintain <span class="mono">Jamf Connect</span> / Okta OIDC federation for fleet-wide identity management</li>
+        <li>Built macOS compliance baseline with <span class="mono">SwiftDialog</span> remediation tooling and Extension Attribute reporting; owns patch compliance via DDM Blueprints</li>
+        <li>Embedded partner to the InfoSec team: architects and maintains endpoint security agent deployment, scoping, and enforcement workflows across macOS</li>
+        <li>Manages supervised iPad and iPhone fleet via <span class="mono">Apple Business Manager</span>; owns MDM profiles, app distribution, and iOS / iPadOS policy enforcement</li>
+        <li>Tier 2/3 escalation point for macOS issues; authors internal documentation and HOW-TO guides for Jamf Connect and macOS provisioning workflows</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">IT Support Engineer</div>
+        <div class="job-date">2021 – 2022</div>
+      </div>
+      <div class="job-co">DataRobot &nbsp;·&nbsp; Boston, MA</div>
+      <ul class="bullets">
+        <li>macOS / iOS / iPadOS systems administrator and subject matter expert</li>
+        <li>Architected Jamf Connect / Okta zero-touch deployment from the ground up; managed Apple Business Manager for software distribution and asset management</li>
+        <li>Onboarding specialist: built and configured macOS, Windows, and Linux systems for incoming employees</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Desktop Support Engineer, Level 2</div>
+        <div class="job-date">2019 – 2020</div>
+      </div>
+      <div class="job-co">CarGurus &nbsp;·&nbsp; Cambridge, MA</div>
+      <ul class="bullets">
+        <li>macOS SME and Jamf Pro administrator; built Self Service catalog for on-site and remote software distribution</li>
+        <li>Full administrative ownership of 60+ SaaS platforms; led onboarding and offboarding across macOS, Windows, and Linux systems</li>
+        <li>Tier 1/2 escalation point; Jamf Connect / Okta zero-touch architect</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Apple Systems Administrator</div>
+        <div class="job-date">2007 – 2019</div>
+      </div>
+      <div class="job-co">Thayer Academy &nbsp;·&nbsp; Braintree, MA</div>
+      <ul class="bullets">
+        <li>Chief architect of one-to-one laptop program serving 720 students, 200 faculty and staff, and 100 classroom and lab units. The foundation of all subsequent large-environment work</li>
+        <li>Designed and deployed institution-wide iPad program via <span class="mono">Apple School Manager</span>; principal support for all iOS devices across faculty and staff</li>
+        <li>Managed 150+ distinct software packages with a patch compliance workflow; led yearly system refresh cycle for student and faculty fleets</li>
+        <li>Part of a small team responsible for all aspects of day-to-day IT in a mixed Mac / PC environment; Google Workspace and basic Active Directory administration</li>
+        <li>Ran the school MakerSpace: 3D printing, laser cutting, and vinyl printing; worked with faculty to integrate fabrication tools into curriculum</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Senior Systems Administrator II</div>
+        <div class="job-date">2000 – 2007</div>
+      </div>
+      <div class="job-co">Biogen &nbsp;·&nbsp; Cambridge, MA &nbsp;·&nbsp; End User Technology, Global Technology Services</div>
+      <ul class="bullets">
+        <li>Principal liaison between R&amp;D and IT business units; chief macOS architect for the enterprise</li>
+        <li>Created and maintained standard hardware image (single image for all desktops and portables); owned NetBoot / NetInstall infrastructure</li>
+        <li>Tier 2/3 Mac escalation point; membership on cross-platform committees including printing, imaging, and company-wide virus protection response</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Support Engineer</div>
+        <div class="job-date">1999 – 2000</div>
+      </div>
+      <div class="job-co">Digitas &nbsp;·&nbsp; Boston, MA</div>
+      <ul class="bullets">
+        <li>Desktop and hardware maintenance across multiple sites; second-level Macintosh and Windows support</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Macintosh and PC Consultant</div>
+        <div class="job-date">1996 – 2000</div>
+      </div>
+      <div class="job-co">Reebok International &nbsp;/&nbsp; Computer Merchants (GE Capital, Mitre Corp.) &nbsp;/&nbsp; Harvard University</div>
+      <ul class="bullets">
+        <li>Desktop maintenance across multiple contract engagements covering macOS and Windows environments</li>
+        <li>Lead technician at Harvard's Longwood Medical Area: Mac, PC, and peripheral support for eight hospitals and schools including Children's Hospital, Brigham and Women's, Dana-Farber, and Harvard Medical</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Lab Technician</div>
+        <div class="job-date">1992 – 1997</div>
+      </div>
+      <div class="job-co">University of Massachusetts &nbsp;·&nbsp; Boston, MA</div>
+      <ul class="bullets">
+        <li>Upkeep and repair of departmental and 250+ lab units across DEC, Apple, Zenith, HP, NEC, Compaq, and IBM systems</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <div class="section-label">SaaS Administration</div>
+    <div class="saas-grid">
+      <span class="saas-tag">Okta</span>
+      <span class="saas-tag">Slack</span>
+      <span class="saas-tag">Zoom</span>
+      <span class="saas-tag">Google Workspace</span>
+      <span class="saas-tag">1Password</span>
+      <span class="saas-tag">Office 365</span>
+      <span class="saas-tag">Confluence / Jira</span>
+      <span class="saas-tag">Dropbox</span>
+      <span class="saas-tag">Box</span>
+      <span class="saas-tag">OneDrive</span>
+      <span class="saas-tag">JumpCloud</span>
+      <span class="saas-tag">Automox</span>
+      <span class="saas-tag">RingCentral</span>
+      <span class="saas-tag">Salesforce</span>
+      <span class="saas-tag">LastPass</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert">
+        <span class="cert-name">Certified Jamf Administrator</span>
+        <span class="cert-year">2010 &nbsp;·&nbsp; 2014 &nbsp;·&nbsp; 2018</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Apple Certified Support Professional</span>
+        <span class="cert-year">2016</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Apple Certified Mac Management</span>
+        <span class="cert-year">2014</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Certified Casper Mobile Administrator</span>
+        <span class="cert-year">2012</span>
+      </div>
+      <div class="cert">
+        <span class="cert-name">Mac Integration Basics</span>
+        <span class="cert-year">2015</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Education</div>
+    <div class="edu-degree">Bachelor of Arts in Forensic Anthropology and Criminal Investigation</div>
+    <div class="edu-school">University of Massachusetts Boston &nbsp;·&nbsp; 1996</div>
+  </div>
+
+  <div class="contact-form">
+    <div class="section-label">Get in Touch</div>
+    <form action="https://formspree.io/f/xvznkker" method="POST" id="contact-form">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Optional">
+        </div>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+        <div class="form-field full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <div class="form-note">Submissions go directly to my inbox.</div>
+      <div class="success-msg" id="success-msg">Message sent. I'll be in touch.</div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-msg');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      form.reset();
+      successMsg.style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
